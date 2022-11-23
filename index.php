@@ -3,21 +3,30 @@
  * M.Ali.Abbaspor
  * Desc: show hikvision cctv image camera in web page
  *
- * note: only work in hikvision camera with ISAPI function
+ * note: only work in hikvision camera with ISAPI function.
+ *
+ * intellsoft : https://intellsoft.ir/
+ * Contact me on element messanger: @intellsoft:matrix.org
+ * https://matrix.to/#/@intellsoft:matrix.org
  */
 
+// Load camera connection parameters
 require_once ("Config.php");
 
-$current = file_get_contents($url);
-
+// this image tag display camera image
 $camera =  '<img id="myImage" src="cctv.php">';
 
 ?>
 <html>
+<head>
+    <title>بارگزاری تصویر دوربین مداربسته هایک ویژن در صفحه سایت</title>
+</head>
 <body>
 <?php echo $camera; ?>
 <script>
 
+    // Refresh image tag every $Load_Interval miliseconds.
+    // see Config.php for change.
     var intervalId = window.setInterval(function(){
         refreshImage();
     }, <?php echo $Load_Interval; ?>);
