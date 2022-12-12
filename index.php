@@ -14,7 +14,7 @@
 require_once ("Config.php");
 
 // this image tag display camera image
-$camera =  '<img id="myImage" src="cctv.php">';
+$camera_Image =  '<img id="myImage" width="'.$output_Image_Width.'" height="'.$output_Image_height.'" src="cctv.php">';
 
 ?>
 <html>
@@ -22,7 +22,7 @@ $camera =  '<img id="myImage" src="cctv.php">';
     <title>بارگزاری تصویر دوربین مداربسته هایک ویژن در صفحه سایت</title>
 </head>
 <body>
-<?php echo $camera; ?>
+<?php echo $camera_Image; ?>
 <script>
 
     // Refresh image tag every $Load_Interval miliseconds.
